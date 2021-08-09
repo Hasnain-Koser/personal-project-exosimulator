@@ -1,0 +1,122 @@
+#start-top {
+    margin: 25% 2%;
+    text-align: center;
+    overflow: hidden;
+    transition: 1s;
+}
+#top-content1 {
+    text-align: center;
+    width: fit-content;
+    color: yellow;
+}
+#top-content2 {
+    width: fit-content;
+    color: white;
+}
+#top-content3 {
+    color: white;
+}
+#top-content3 h3{
+    display: none;
+}
+.arrow {
+    transition: 1s;
+}
+.dive-in:hover .arrow {
+    margin-left: 2%;
+}
+.dive-in {
+    font-size: large;
+}
+#offer {
+    color: white;
+    font-size: xx-large;
+    text-align: center;
+    margin-top: 45%;
+}
+#containers {
+    opacity: 0;
+    transition: 3s;
+}
+.sim {
+    text-align: right;
+    height: inherit;
+    padding: 2.5%;
+    background-color: darkslateblue;
+    margin: 1%;
+    color: white;
+}
+.sima:hover #simarrow {
+    margin-left: 2%;
+}
+.data {
+    text-align: left;
+    padding: 2.5%;
+    background-color: darkmagenta;
+    margin: 1%;
+    color: white;
+}
+.dataa:hover #dataarrow {
+    margin-left: 2%;
+}
+.play {
+    text-align: right;
+    padding: 2.5%;
+    background-color: indianred;
+    margin: 1%;
+    color: white;
+}
+.playa:hover #playarrow {
+    margin-left: 2%;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+body {
+    background-image: url("../Images/bg-home.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+  }
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    display: none;
+}
+
+@media only screen and (min-width: 800px) {
+    #start-top {
+        margin: 10% 0 0 5%;
+    }
+    #top-content3 h3{
+        display: block;
+    }
+    #offer {
+        margin-top: 25%;
+    }
+    .sim {
+        text-align: center;
+        margin: 6.25%;
+        height: 100%;
+    }
+    .data {
+        text-align: center;
+        margin: 6.25% 0;
+        height: 100%;
+    }
+    .play {
+        text-align: center;
+        margin: 6.25%;
+        height: 100%;
+    }
+    img {
+        display: inline;
+        width: 70%;
+        height: auto;
+    }
+}

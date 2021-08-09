@@ -1,0 +1,62 @@
+body {
+    background-image: url("../Images/bg-sim.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    color: white;
+}
+
+h4 {
+    padding: 10px;
+    color: yellow;
+}
+
+hr {
+    width: 95%;
+}
+
+.tutlink {
+    color: white;
+    text-decoration: none;
+    transition: 1s;
+}
+
+.arrow {
+    transition: 1s;
+    color: white;
+}
+
+.tutlink:hover {
+    color: yellow;
+}
+
+.tutlink:hover .arrow {
+    margin-left: 10px;
+    color: yellow;
+}
+
+.content {
+    padding: 25px;
+}
+
+.overview {
+    padding: 10px;
+}
+
+.overview h3 {
+    color: coral;
+}
+
+.overview li {
+    padding: 5px;
+}
+
+.overview li b {
+    color: lightgreen;
+}
+
+.random {
+    color: palegreen;
+}

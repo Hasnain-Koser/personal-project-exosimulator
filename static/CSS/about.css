@@ -1,0 +1,84 @@
+.about-content::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.left {
+    text-align: left;
+    width: 90%; 
+    overflow: hidden;
+    padding: 2%;
+    margin: 5%;
+    transition: 0.7s;
+    clear: both;
+    color: white;
+}
+#developer {
+    background-color: darkslateblue;
+}
+#project {
+    background-color: darkmagenta;
+}
+.about-us {
+    color: white;
+    font-size: xx-large;
+    vertical-align: middle;
+    text-align: center;
+}
+.tutorial {
+    color: white;
+    font-size: xx-large;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.tutorialvids {
+    padding: 10px;
+    text-align: center;
+}
+
+.tutorialvids iframe {
+    display: inline-block;
+}
+
+.tutorialvids h3 {
+    color: white;
+}
+
+body {
+    background-image: url("../Images/about-bg.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+#project a {
+    color: white;
+}
+
+@media only screen and (min-width: 500px) {
+    .left {
+        width: 10%;
+        padding: 2%;
+        margin: 2% 5% 2%;
+        transition: 0.7s;
+        clear: both;
+    }
+    #developer {
+        color: darkslateblue;
+    }
+    #project {
+        color: darkmagenta;
+    }
+
+    .tutorialvids iframe {
+        width: 70%;
+        height: 250px;
+    }
+    
+    #project a {
+        color: white;
+    }
+}

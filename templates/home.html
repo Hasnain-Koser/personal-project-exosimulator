@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exosimulator - Home</title>
+    <link rel="stylesheet" href="../static/CSS/home.css">
+    <link rel="stylesheet" href="../static/CSS/base.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="../static/Images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../static/Images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../static/Images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../static/Images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../static/Images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../static/Images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../static/Images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/Images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../static/Images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/Images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../static/Images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/Images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../static/Images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../static/Images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://kit.fontawesome.com/f50845a38a.js" crossorigin="anonymous" defer></script>
+    <script src="{{ url_for('static', filename='JavaScript/home.js')}}" defer></script>
+</head>
+<body> 
+    <header>
+        <div class="navbar">
+            <a href="/" id="title"><img src="../static/Images/logo.png" id="logo"> <h2>ExoSimulator</h2></a>
+            <a href="/playground" class="links">Playground</a>
+            <a href="/data-science" class="links">Data Science</a>
+            <a href="/simulator" class="links">Simulation</a>
+            <a href="/about" class="links">About</a>
+            <a href="/" class="links active">Home</a>
+        </div>
+    </header>
+    <div class="row">
+        <div id="start-top" class="col-6">
+            <div id="top-content1">
+                <h1>ExoSimulator</h1>
+            </div>
+            <div id="top-content2">
+                <h2>A place to Simulate and Explore new worlds</h2>
+            </div>
+            <div id="top-content3">
+                <h3>This website was created for Scientists and Astronomy Enthusiasts like you <br>
+                    to dwell into planetary systems that are yet out of human reach.</h3>
+                <a class="dive-in" href="#offer">Dive right in <span class="far fa-arrow-alt-circle-down arrow"></span></a>
+            </div>
+        </div>
+    </div>
+    <h3 style="text-align:center;" id="offer">Exciting Things You Can Try</h3>
+    <div id="containers" class="row">
+        <div class="sim col-3">
+            <h3>Simulator</h3>
+            <img src="/static/Images/Home_Page_Images/Simulation_img.jpg" alt="Simulation Image">
+            <p>Use our Amazing exoplanet simulator to view planetary systems in 3D! 
+                Move around the 3D space, explore properties, habitability and hop from planet to planet, 
+                view the wonderful universe that lies ahead sitting right at home!</p>
+            <a href="/simulator" class="sima">Check it out <span class="far fa-arrow-alt-circle-right arrow" id="simarrow"></span></a>
+        </div>
+        <div class="data col-3">
+            <h3>Data Science</h3>
+            <img src="/static/Images/Home_Page_Images/DataScience_img.jpg" alt="Data Science Image">
+            <p>See how we analyzed the huge data of more than 4000 exoplanets discovered till date. 
+                Our results - all the patterns, trends and relations we found within the data that 
+                we can relate to real-life concepts and understand the different planetary systems and properties.</p>
+            <a href="/data-science" class="dataa">Check it out <span class="far fa-arrow-alt-circle-right arrow" id="dataarrow"></span></a>
+        </div>
+        <div class="play col-3">
+            <h3>Playground</h3>
+            <img src="/static/Images/Home_Page_Images/Playground_img.jpg" alt="Playground Image">
+            <p>An interactive and interesting way to understand and discover the various properties and relations 
+                between exoplanetary systems in action. Use our interactive UI to change the properties of planetary 
+                systems and see what happens to the system in 3D as well.</p>
+                <a href="/playground" class="playa">Check it out <span class="far fa-arrow-alt-circle-right arrow" id="playarrow"></span></a>
+        </div>
+    </div>
+    <footer>
+        <div class="foot col-12">       
+            <div class="col-4">
+                <h4>Website Links</h4>
+                <a href="/" class="anchor">Home</a> <br>
+                <a href="/about" class="anchor">About</a> <br>
+                <a href="/simulator" class="anchor">Simulator</a> <br>
+                <a href="/data-science" class="anchor">Data Science</a> <br>
+                <a href="/playground" class="anchor">Playground</a>
+            </div>
+            <div class="col-4">
+                <h4>References</h4>
+                <p>Galaxy image and planet texture taken from - </p>
+                <p><a href="https://www.solarsystemscope.com/textures/" target="_blank">https://www.solarsystemscope.com/textures/</a></p>
+            </div>
+            <div class="col-4">
+                <img src="/static/Images/logo.png" alt="Exosimulator Logo" class="logoimg" align="center">
+                <h3>ExoSimulator</h3>
+            </div>
+        </div>    
+    </footer>
+</body>
+</html>

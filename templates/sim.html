@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExoSimulator - Simulation</title>
+    <link rel="stylesheet" href="../static/CSS/base.css">
+    <link rel="stylesheet" href="../static/CSS/sim.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="../static/Images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../static/Images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../static/Images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../static/Images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../static/Images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../static/Images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../static/Images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/Images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../static/Images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/Images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../static/Images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/Images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../static/Images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../static/Images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://kit.fontawesome.com/f50845a38a.js" crossorigin="anonymous" defer></script>
+    <script src="https://preview.babylonjs.com/babylon.js" defer></script>
+    <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.min.js" defer></script>
+    <script src="https://code.jquery.com/pep/0.4.3/pep.js" defer></script>
+    <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="/" id="title"><img src="../static/Images/logo.png" id="logo"> <h2>ExoSimulator</h2></a>
+            <a href="/playground" class="links">Playground</a>
+            <a href="/data-science" class="links">Data Science</a>
+            <a href="/simulator" class="links active">Simulation</a>
+            <a href="/about" class="links">About</a>
+            <a href="/" class="links">Home</a>
+        </div>
+    </header>
+    <canvas id="rendersim"></canvas>
+    <div class="panel">
+        <div class="ui row">
+                <div class="system col-6">
+                    <h4>System</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="in col-6">
+                            <div class="row">
+                                <div class="col-12">
+                                    <label for="starname">Star Name: </label>
+                                    <input type="text" id="starname">
+                                    <button id="simulate">Simulate</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="selector col-12">
+                                    <label for="planet">View: </label>
+                                    <select name="Planets" id="planet"></select> 
+                                    <button id="show">Show</button>
+                                    <p id="error"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="show col-6">
+                            <div class="row">
+                                <div class="col-6" align="center"><button id="habitable_zone">Hide Habitable Zone</button></div>
+                                <div class="col-6" align="center"><button id="predorbits">Hide Predicted Orbits</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="time col-3">
+                    <h4>Time</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col-6" align="center">
+                            <button id="speeduptime">Speed up Time</button>
+                        </div>
+                        <div class="col-6" align="center">
+                            <button id="slowdowntime">Slow Down Time</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12" align="center">
+                            <button id="resettime">Reset Time</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="generate col-3">
+                    <h4>Generate</h4>
+                    <hr>
+                    <button id="randomsystem">Random System</button>
+                </div>
+            </div>
+        <div class="data row">
+            <div class="star col-6">
+                <h4>Star</h4>
+                <hr>
+                <div class="row">
+                    <div class="col-6"><p id="stname">Name: </p></div> <div class="col-6"><p id="sttype">Type: </p></div>
+                </div>
+                <div class="row">
+                    <div class="col-6"><p id="strad">Radius: </p></div> <div class="col-6"><p id="stmass">Mass: </p></div>
+                </div>
+                <div class="row">
+                    <div class="col-12"><p id="distance">Distance from Earth: </p></div>
+                </div>
+                <div class="row"><div class="col-12"><p>Habitable Zone - </p></div></div>
+                <div class="row">
+                    <div class="col-6"><p id="inner">Inner: </p></div> <div class="col-6"><p id="outer">Outer: </p></div>
+                </div>
+                <h4>Scaling</h4>
+                <hr>
+                <div class="row">
+                    <div class="col-6"><p id="stscale">Star Scaling: </p></div> <div class="col-6"><p id="plscale">Planet Scaling: </p></div>
+                </div>
+                <div class="row">
+                    <div class="col-12"><p id="distscale">Distance Scaling: </p></div>
+                </div>
+            </div>
+            <div class="planet col-6">
+                <h4>Planet</h4>
+                <hr>
+                <div class="row">
+                    <div class="col-6"><p id="plname">Name: </p></div> <div class="col-6"><p id="pltype">Type: </p></div>
+                </div>
+                <div class="row">
+                    <div class="col-6"><p id="plrad">Radius: </p></div> <div class="col-6"><p id="plmass">Mass: </p></div>
+                </div>
+                <div class="row">
+                    <div class="col-12"><p>Orbits - </p></div>
+                </div>
+                <div class="row">
+                    <div class="col-6"><p id="a">Semi-major: </p></div> <div class="col-6"><p id="b">Semi-Minor: </p></div>
+                </div>
+                <div class="row">
+                    <div class="col-6"><p id="orbper">Orbital Period: </p></div> <div class="col-6"><p id="orbvel">Mean Orbital Velocity: </p></div>
+                </div>
+                <div class="row">
+                    <div class="col-6"><p id="ap">Apoapsis: </p></div> <div class="col-6"><p id="pe">Periapsis: </p></div>
+                </div>
+                <div class="row">
+                    <div class="col-6"><p id="eccen">Eccentricty: </p></div> <div class="col-6"><p id="incl">Inclination: </p></div>
+                </div>
+                <div class="row">
+                    <div class="col-12"><p id="hab">Habitable: </p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tut">
+        <p>
+            Dont Know what to do, View our tutorial -
+            <a class="tutlink" href="/about#tutorial">Tutorial <span class="far fa-arrow-alt-circle-right arrow"></span></a>
+        </p>
+    </div>
+    <footer>
+        <div class="foot col-12">       
+            <div class="col-4">
+                <h4>Website Links</h4>
+                <a href="/" class="anchor">Home</a> <br>
+                <a href="/about" class="anchor">About</a> <br>
+                <a href="/simulator" class="anchor">Simulator</a> <br>
+                <a href="/data-science" class="anchor">Data Science</a> <br>
+                <a href="/playground" class="anchor">Playground</a>
+            </div>
+            <div class="col-4">
+                <h4>References</h4>
+                <p>Background image by - <a href="https://unsplash.com/@tyvdh?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Tyler van der Hoeven</a> on <a href="https://unsplash.com/s/photos/planet?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a></p>
+                <p>Galaxy beckground and planetary textures taken from - <a href="https://www.solarsystemscope.com/textures/" target="_blank">https://www.solarsystemscope.com/textures/</a></p>
+                <p>Exoplanetary Data taken from - <a href="https://exoplanetarchive.ipac.caltech.edu/index.html" target="_blank">Nasa Exoplanet Archive</a></p>
+            </div>
+            <div class="col-4">
+                <img src="/static/Images/logo.png" alt="Exosimulator Logo" class="logoimg" align="center">
+                <h3>ExoSimulator</h3>
+            </div>
+        </div>    
+    </footer>
+    <script src="../static/JavaScript/sim.js" defer></script>
+</body>
+</html>

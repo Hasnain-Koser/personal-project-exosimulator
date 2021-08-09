@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExoSimulator - Data Science</title>
+    <link rel="stylesheet" href="../static/CSS/dataA.css">
+    <link rel="stylesheet" href="../static/CSS/base.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="../static/Images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../static/Images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../static/Images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../static/Images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../static/Images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../static/Images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../static/Images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/Images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../static/Images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/Images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../static/Images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/Images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../static/Images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../static/Images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <header>
+        <div class="navbar"> 
+            <a href="/" id="title"><img src="../static/Images/logo.png" id="logo"> <h2>ExoSimulator</h2></a>
+            <a href="/playground" class="links">Playground</a>
+            <a href="/data-science" class="links active">Data Science</a>
+            <a href="/simulator" class="links">Simulation</a>
+            <a href="/about" class="links">About</a>
+            <a href="/" class="links">Home</a>
+        </div>
+    </header>
+    <div class="overview">
+        <h3>Data Analysis Overview</h3>
+        <p>
+            This Web Page has been split into 2 parts -
+            <ol> 
+                <li>
+                    <b>Histogram and trend or pattern analyses -</b> In this type of analysis, we plot histograms with different bin sizes to 
+                    explore the trends and patterns in the properties of exoplanets and how they occur naturally and how the way we detect 
+                    exoplanets affect our data.
+                </li>
+                <li>
+                    <b>Predictive or regression analyses -</b>  Here we create scatter plots of 2 properties, to observe and see how and if 
+                    they relate to each other. What trend can we observe between the properties and through one property is it possible to 
+                    predict the other. We also explore how a certain property may affect another and why does this happen.
+                </li>
+            </ol>
+        </p>
+    </div>
+    <hr>
+    <div class="analysis row" id="discmethod">
+        <h4 class="heading">Discovery Methods</h4>
+        <div class="content col-6">
+            <div class="relation">
+                <p>
+                    Upon a glance at the graph, we can see that the most used method or most planets have been detected by the 
+                    Transit method as it is easy to use, requires minimal equipment and has the best chance of detecting a planet, 
+                    while the radial velocity method comes in second again with the same reasons of easy detection, 
+                    minimal equipment and higher detection rate. While the other methods are hard to conduct, require 
+                    special equipment or have low rates of detecting a planet although are yet used to gather special data 
+                    on the planet or system that the other methods would not have been able to provide. This graph and data are 
+                    vital to the results that the other graphs about planetary and stellar data provide as the method used are also 
+                    extremely important. Depending on the method, different types of systems can be detected, and therefore a variety 
+                    of methods exist out there to detect exoplanets. 
+                </p>
+            </div>
+            <div class="irregularities"></div>
+        </div>
+        <div class="graph col-6">
+            <div class="interactive col-10">
+                {{src3 | safe}}
+                {{div3 | safe}}
+            </div>
+            <div class="snip">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="analysis row" id="planetmass">
+        <h4 class="heading">Planetary Mass</h4>
+        <div class="content col-6">
+            <div class="relation">
+                <p>
+                    As we can see through the graph a lot of the planets are concentrated or the graph is skewed 
+                    towards the left, therefore we observe that there are multiple small, rocky and earth-like planets. Although Graphs 
+                    can be misleading, we not only need to observe the bars but also the scale of the graph, we see that this graph's 
+                    x-axis leads up to 2.5e+5!!! which means it has huge planets and they are quite spread out when you try to zoom in. 
+                    Therefore there are not only many small and rocky planets but also huge Saturn and Jupiter like ones with high masses. 
+                    Though we can infer that there are more small and rocky planets than larger ones. A reason for this could be 
+                    smaller orbits which we would see later on as the planet goes closer to the star its size reduces as well as 
+                    large planets forming right next to stars is quite unlikely and is hard for the system to maintain the same. 
+                    Although there are some exceptions including the one of the discoveries of the first exoplanet 51 pegasi b.
+                </p>
+            </div>
+            <div class="irregularities"></div>
+        </div>
+        <div class="graph col-6">
+            <div class="interactive col-10">
+                {{scripts[0] | safe}}
+                {{divs[0] | safe}}
+            </div>
+            <div class="snip">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="analysis row" id="planetradius">
+        <h4 class="heading">Planetary Radii</h4>
+        <div class="content col-6">
+            <div class="relation">
+                <p>
+                    The trend that we observe above of having more smaller, rocky and Earth-like planets and also having a considerable 
+                    amount of Jupiter-like planets as well is observed quite clearly here. As we see 2 peaks in the graph, one larger 
+                    peak with planets having radii close to rocky or earth-like and Super-Earths while the other smaller peak having 
+                    radii close to Jupiter like planets. Therefore this is quite closely related to planetary masses.
+                </p>
+            </div>
+            <div class="irregularities"></div>
+        </div>
+        <div class="graph col-6">
+            <div class="interactive col-10">
+                {{scripts[1] | safe}}
+                {{divs[1] | safe}}
+            </div>
+            <div class="snip">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="analysis row" id="semimajor">
+        <h4 class="heading">Semi-Major-Axis</h4>
+        <div class="content col-6">
+            <div class="relation">
+                <p>
+                    Through the graph, we can see that an exceptional amount of planets have quite short Semi-Major-Axes. We see it is 
+                    extremely skewed to the left and concentrated there with a huge bar left and multiple smaller bars spanning up to 
+                    3500 AU!! This means there are a large number of planets that have been found to have short semi-major axes 
+                    therefore also having quite short orbits close to the star, these are not only rocky but Jupiter like ones 
+                    as well. This majority or represented skewness can be explained since a large number of planets 
+                    were found by the transit method which is known for observing light dips in stars to detect planets. This method 
+                    although is quite simple and is widely used, the transit method can mainly just detect planets with extremely short 
+                    orbits to be observable from the earth and to get that light dip to confirm the planet's existence. 
+                </p>
+            </div>
+            <div class="irregularities"></div>
+        </div>
+        <div class="graph col-6">
+            <div class="interactive col-10">
+                {{scripts[2] | safe}}
+                {{divs[2] | safe}}
+            </div>
+            <div class="snip">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="analysis row" id="period">
+        <h4 class="heading">Orbital Period</h4>
+        <div class="content col-6">
+            <div class="relation">
+                <p>
+                    With the skewness and representation of the graph observed above of the Semi-Major-Axes the graph for orbital 
+                    period almost looks similar to the one noticed above because both are closely related orbital elements. 
+                    The semi-major axis defines the longest radius of the orbit, and the radius of the orbit defines 
+                    its size which intern relates to the time it takes for the planet to complete a revolution or orbit around the 
+                    sun. therefore because we observed a huge amount of short semi-major axes it should come with no surprise that 
+                    we would observe an exceptional amount of short orbital periods as well although a thing to note in the graph 
+                    for orbital periods is the scale as it is huge!!! even expressed in days!
+                </p>
+            </div>
+            <div class="irregularities"></div>
+        </div>
+        <div class="graph col-6">
+            <div class="interactive col-10">
+                {{scripts[3] | safe}}
+                {{divs[3] | safe}}
+            </div>
+            <div class="snip">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="analysis row" id="planettemperature">
+        <h4 class="heading">Planetary Temperature</h4>
+        <div class="content col-6">
+            <div class="relation">
+                <p>
+                    Though this time we would expect a graph more skewed to the right since most 
+                    planets have short semi-major axes, therefore, are in orbit quite close to the sun, this graph shows us different 
+                    results, rather than being shifted to the right it is shifted to the left. Although when we get into the details 
+                    it makes quite a lot of sense. The first thing to note is that this scale is in kelvin and because we observed 
+                    only a small amount of planets that have larger orbits, therefore, the graph is quite low around the start but 
+                    because the measure we are using is kelvin it begins a steep incline and peaks out about 500 Kelvin or 200#deg 
+                    Celsius!! And when we move further we observe another short peak at 700 Kelvin (400#deg Celsius) and then a 
+                    gradual decline and when we look at the results of the graph rather than the shape we realize that these 
+                    results make sense, such planets would be about that hot when orbiting so close to the sun. In 
+                    comparison, our Earth is only about 14 Degrees Celsius and rising (global warming). While we can also see 
+                    that the graph ends at about 4000 this is because such planets and especially gaseous ones would begin to 
+                    turn into stars at such temperatures.
+                </p>
+            </div>
+            <div class="irregularities"></div>
+        </div>
+        <div class="graph col-6">
+            <div class="interactive col-10">
+                {{scripts[4] | safe}}
+                {{divs[4] | safe}}
+            </div>
+            <div class="snip">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="analysis row" id="sttoorbrad">
+        <h4 class="heading">Stellar to Orbital Radius Ratio</h4>
+        <div class="content col-6">
+            <div class="relation">
+                <p>
+                    Through the graph, we see that there are no intervals lower than 1 this is because 
+                    distances between planets and their stars have to be at least more than the radius of the star, otherwise the star 
+                    would most likely consume the planet or the planet would be barely detectable due to its glaring brightness. 
+                    The ratio here peaks out quite early which is to be expected as we also have seen that most planets have extremely 
+                    small semi-major axes. The graph also gradually declines. Using this graph we can also infer 2 things -
+                    <ol>
+                        <li>Smaller Semi-Major Axes</li>
+                        <li>Stars with larger Radii</li>
+                    </ol>
+                    Although we can say that there could be stars with larger radii we cannot be certain as the graph also slowly 
+                    declines with up to the ratio going towards 500! Which means there are a small amount of smaller stars 
+                    that appear as well. 
+                </p>
+            </div>
+            <div class="irregularities"></div>
+        </div>
+        <div class="graph col-6">
+            <div class="interactive col-10">
+                {{scripts[5] | safe}}
+                {{divs[5] | safe}}
+            </div>
+            <div class="snip">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="analysis row" id="spectypes">
+        <h4 class="heading">Stellar Spectral Types</h4>
+        <div class="content col-6">
+            <div class="relation">
+                <p>
+                    This graph talks about the spectral types of stars and is extremely important to the next couple of graphs, 
+                    properties and relations that are to be drawn. The spectral type of a star provides us with enough information 
+                    to derive a lot of information. A spectral type can help understand the range of radii, mass and temperature 
+                    the star lies in. It can even tell us about its colour, its phase in the stellar life cycle and much more. 
+                    Each spectral type defines a set of properties and there are various spectral types. Each star must fall in 
+                    at least one of the spectral types. <br>
+                    Through this graph of spectral types, we can see a huge amount of stars in the lower end meaning the spectral types 
+                    of M, K, G, and F while the other spectral types are quite low. The graph starts low at M, Peaks at G and 
+                    constantly declines towards the higher spectral types. due to this, we are also bound to look at normal distributions 
+                    in multiple properties.<br>
+                    Due to the properties that these spectral types yield, the graph is expected as M, K, G and F spectral types 
+                    have smaller radii, mass and have a lower temperature as well, making it easier for them to afford planets and 
+                    make a planetary system, our star, The Sun is of spectral type G and therefore can efficiently have an 
+                    8 planet system with one of them being habitable as well. 
+                </p>
+            </div>
+            <div class="irregularities"></div>
+        </div>
+        <div class="graph col-6">
+            <div class="interactive col-10">
+                {{src2 | safe}}
+                {{div2 | safe}}
+            </div>
+            <div class="snip">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="analysis row" id="startemperature">
+        <h4 class="heading">Stellar Temperature</h4>
+        <div class="content col-6">
+            <div class="relation">
+                <p>
+                    Like mentioned above this trend is directly related to the one found in spectral types. 
+                    Because we know that the spectral types of M, K, G, and F appear the most, the trend relating 
+                    the temperature would also fall in that range. The temperature range for G spectral type which was 
+                    observed to peak in the graph above is 5000 - 6000K which is also evident in this graph as the 
+                    temperature peaks around the same values. while we observe a steady incline in the temperature as 
+                    observed there are stars of lower temperature spectral types more such as M and K while there is a 
+                    steep decline, although we do see some high bars which means that those must be the F spectral type 
+                    stars and finally the curve dies down and extends up to more than 50000K with some small bars in the 
+                    middle which must be the A, B, and O spectral type stars while WD spectral type refers to a dwarf type star
+                    therefore it must be in one of the early peaks instead. 
+                </p>
+            </div>
+            <div class="irregularities"></div>
+        </div>
+        <div class="graph col-6">
+            <div class="interactive col-10">
+                {{scripts[6] | safe}}
+                {{divs[6] | safe}}
+            </div>
+            <div class="snip">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="analysis row" id="starmass">
+        <h4 class="heading">Stellar Mass</h4>
+        <div class="content col-6">
+            <div class="relation">
+                <p>
+                    Continuing the above relation we saw that M, K, G and F are the dominant spectral types found in the data hence 
+                    influencing the masses of the stars as well. We observe a normal distribution around our stellar radius or the 
+                    radius of the sun which is quite early on, and because our sun and the dominant spectral type both are G, it 
+                    makes sense for the peak to be around that area as well. We do not observe any slow or fast inclines or declines 
+                    although we do have a lot of outliers as we do see that right side of the graph has quite a long tail even after 
+                    the distribution has ended. These outliers although do correspond to F and above spectral types even though 
+                    spectral type F was also one of the dominant ones the number was quite less and these kinds of stars also tend 
+                    to have higher masses and radii, but the ones ranging towards the end would include A, B and O 
+                    spectral types.
+                </p>
+            </div>
+            <div class="irregularities"></div>
+        </div>
+        <div class="graph col-6">
+            <div class="interactive col-10">
+                {{scripts[7] | safe}}
+                {{divs[7] | safe}}
+            </div>
+            <div class="snip">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="analysis row" id="starradius">
+        <h4 class="heading">Stellar Radii</h4>
+        <div class="content col-6">
+            <div class="relation">
+                <p>
+                    Following the above relations especially the one we observed in the Stellar masses and Spectral types we can 
+                    infer the same results out here. The trend we found in stellar masses is close to or exactly similar to the one 
+                    found in Stellar Radii as we see both have normal distributions and both peak around the same point as well. 
+                    Therefore their mean must also be quite close. We can see here how strongly the mass of the star is 
+                    influencing its radius. A major factor although Influencing both would be the spectral type which has been 
+                    described and talked about in the above relations. 
+                </p>
+            </div>
+            <div class="irregularities"></div>
+        </div>
+        <div class="graph col-6">
+            <div class="interactive col-10">
+                {{scripts[8] | safe}}
+                {{divs[8] | safe}}
+            </div>
+            <div class="snip">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="analysis row" id="metallicity">
+        <h4 class="heading">Stellar Metalicity</h4>
+        <div class="content col-6">
+            <div class="relation">
+                <p>
+                    We observe another normal distribution right around 0 which corresponds to the metallicity of our star which is 
+                    again expected due to the spectral type. We can again relate this to the spectral type as G type stars would 
+                    have a similar metallicity due to the characteristics they are grouped in.
+                </p>
+            </div>
+            <div class="irregularities"></div>
+        </div>
+        <div class="graph col-6">
+            <div class="interactive col-10">
+                {{scripts[9] | safe}}
+                {{divs[9] | safe}}
+            </div>
+            <div class="snip">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="analysis row" id="luminosity">
+        <h4 class="heading">Stellar Luminosity</h4>
+        <div class="content col-6">
+            <div class="relation">
+                <p>
+                    The stellar Luminosity again displays a normal distribution although this one is spread out and has a sort of 
+                    flatter peak, it has a high variation meaning the data is quite spread out although like the metallicity, the 
+                    graph or the mean and the data is quite centred around the solar luminosity or the luminosity of our sun. 
+                    This helps us imply that if planets the size of earth with the right atmosphere are around the same orbit as 
+                    the earth around such stars, there could potentially be habitable planets one day to reach to.
+                </p>
+            </div>
+            <div class="irregularities"></div>
+        </div>
+        <div class="graph col-6">
+            <div class="interactive col-10">
+                {{scripts[10] | safe}}
+                {{divs[10] | safe}}
+            </div>
+            <div class="snip">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="analysis row" id="stargravity">
+        <h4 class="heading">Stellar Gravity [log10(cm/s<sup>2</sup>)]</h4>
+        <div class="content col-6">
+            <div class="relation">
+                <p>
+                    The stellar gravity again follows a normal distribution centred around the solar gravity that is the gravity of 
+                    the sun - 4.39 in log10(cm/s<sup>2</sup>) units. And is as seen above centred around the gravity of G type 
+                    spectral stars and reduce around the tails denoting the gravity of M, K and F type stars finally the gravity 
+                    values the extend to the far side of the x-axis are the gravity of the higher level stars such as A, B and O.
+                </p>
+            </div>
+            <div class="irregularities"></div>
+        </div>
+        <div class="graph col-6">
+            <div class="interactive col-10">
+                {{scripts[11] | safe}}
+                {{divs[11] | safe}}
+            </div>
+            <div class="snip">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="analysis row" id="starage">
+        <h4 class="heading">Stellar Age</h4>
+        <div class="content col-6">
+            <div class="relation">
+                <p>
+                    Noticing the above relations we would expect to find a normal distribution here as well although we do observe a 
+                    sort of normal distribution but not quite as we observe one tail is fat while the other is thin. This is again 
+                    directly related to the spectral types because the earlier and more dominant spectral types are the ones that 
+                    have just formed or are at a very early stage in the stellar life cycle and therefore we see fatter tails to the 
+                    left as we know that there was a majority of stars with M and K spectral types which have just been born while 
+                    we notice a peak around the age of our sun and other stars that fall in the G type as that is the maximum while 
+                    there is a steep decline with taller bars to the right focusing on the stellar age of F type stars and the shorter 
+                    ones focusing on the other higher stellar types. 
+                </p>
+            </div>
+            <div class="irregularities"></div>
+        </div>
+        <div class="graph col-6">
+            <div class="interactive col-10">
+                {{scripts[12] | safe}}
+                {{divs[12] | safe}}
+            </div>
+            <div class="snip">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="analysis row" id="numofplanets">
+        <h4 class="heading">Number of Planets</h4>
+        <div class="content col-6">
+            <p>
+                We observe there is a large number of planetary systems detected with single planets and reducing. This is most 
+                likely firstly due to it being quite hard to get enough matter and materials for star formation and to get a good 
+                amount of planets to form a proper planetary system. This could be one of the reasons while the other would correspond 
+                to the method used for detection as the transit method or radial velocity method are not very good at detecting planets 
+                at higher distances or orbits from their star and even if there were more planets in a system it would be hard to 
+                detect them using these methods. 
+            </p>
+            <div class="irregularities"></div>
+        </div>
+        <div class="graph col-6">
+            <div class="interactive col-10">
+                {{scripts[13] | safe}}
+                {{divs[13] | safe}}
+            </div>
+            <div class="snip">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="analysis row" id="plmtrtm">
+        <h4 class="heading">Planetary Mass to Radius and Radius to Mass</h4>
+        <div class="content col-12">
+            <p>
+                When we plot one of the graphs we immediately observe a relationship between the 2 properties since they are quite 
+                interrelated. We see a slow incline till the 10 earth radii while the mass then suddenly begins to jump higher as this 
+                denotes the Jupiter-like planets since Jupiter radius is 11 in earth radii, therefore, we see the mas increase rapidly 
+                in that region while early on the mass-radius relationship has slow increase due to the fact them being rocky planets which have 
+                higher densities, therefore, keeping a close balance between mass and radius. <br>
+                this model is a linear regression and therefore it is possible for it to predict certain values. Upon radius as 
+                input, it would provide the mass while as mass as input it would provide the radius. Try it out - 
+                <div class="plmrconv">
+                    <div class="in col-6">
+                        <label for="plmass">Planet Mass</label>
+                        <input type="text" name="plmass" id="plmass">
+                        &nbsp;
+                        <label for="plrad">Planet Radius</label>
+                        <input type="text" name="plmass" id="plrad">
+                        &nbsp;
+                        <button id="plgo">Convert</button>
+                    </div>
+                    <div class="out col-6">
+                        <p id="plradout" class="col-6">Planet Radius: </p>
+                        <p id="plmassout" class="col-6">Planet Mass: </p>
+                    </div>
+                </div>
+            </p>
+            <div class="irregularities"></div>
+        </div>
+        <div class="graph col-12">
+            <div class="interactive col-6">
+                {{src4 | safe}}
+                {{div4 | safe}}
+            </div>
+            <div class="interactive col-6">
+                {{src5 | safe}}
+                {{div5 | safe}}
+            </div>
+            <div class="snip">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="analysis row" id="plmettonum">
+        <h4 class="heading">Metallicity to Number of Planets</h4>
+        <div class="content col-12">
+            <p>
+                When we look at the graph of metallicity to the number of planets we immediately observe a sort of pyramid shape, 
+                this pyramid peaks or the probability of having more planets in a system is when the metallicity is closer to 0. 
+                To turn this into a graph I ran it through a function to look for the highest number of planets each metallicity 
+                had to offer. Using this new data I was able to create a usable graph and this graph can help predict the number of 
+                planets based on the metallicity of the star which u can check out in our playground mode in action. 
+                <a href="playground">Go to Playground</a>
+            </p>
+            <div class="irregularities"></div>
+        </div>
+        <div class="graph col-12">
+            <div class="interactive col-6">
+                {{src8 | safe}}
+                {{div8 | safe}}
+            </div>
+            <div class="interactive col-6">
+                {{src9 | safe}}
+                {{div9 | safe}}
+            </div>
+            <div class="snip">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="analysis row" id="stmtrtm">
+        <h4 class="heading">Solar Mass to Radius and Radius to Mass</h4>
+        <div class="content col-12">
+            <p>
+                while looking at the graph I was able to notice a relationship which is ideal and quite similar to the one observed 
+                in planets as we see how if the radius increases so does the mass of the star and the same thing can be noticed for 
+                the mass to radius relationship. We can construct a non-linear regression for the two of them to show the relationship 
+                better and predict values based on mass or radius as input and radius or mass as output respectively. You can view this 
+                relation live in action at our Playground Mode.
+                <a href="/playground">Go to Playground</a>
+            </p>
+            <div class="irregularities"></div>
+        </div>
+        <div class="graph col-12">
+            <div class="interactive col-6">
+                {{src6 | safe}}
+                {{div6 | safe}}
+            </div>
+            <div class="interactive col-6">
+                {{src7 | safe}}
+                {{div7 | safe}}
+            </div>
+            <div class="snip">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="analysis row" id="smaxeccentoplvel">
+        <h4 class="heading">Semi-Major Axis and Eccentricity to Planet Periapsis Velocity</h4>
+        <div class="content col-12">
+            <p>
+                The semi-major axis and the eccentricity are extremely vital parts of information when defining the orbit of a planet, 
+                they as well play a major role in determining the velocity of the planet at any point of the orbit. As eccentricity 
+                increases the velocity at the periapsis also increases as the orbit is so flattened therefore it spends more time 
+                closer to the sun. and because gravity's equation also takes into account the distance between 2 bodies with higher 
+                eccentricity more time is spent closer to the sun compared to lower eccentricity where the distance is quite divided 
+                or equal and therefore as the eccentricity increases so does the velocity at the periapsis. <br>
+                While a similar justification goes for the semi-major axis as larger orbits require lower velocity to stay in orbit and 
+                not fall into the star while smaller orbits require more velocity to revolve around their sun due to the 
+                distance and the force of gravity being stronger. When combining the 2 in a machine learning algorithm we can see and 
+                understand as we provide the 2 inputs we receive a meaningful output. This model created was also tested and verified 
+                with planets of the solar system and they did provide quite close answers.
+            </p>
+            <div class="irregularities"></div>
+        </div>
+        <div class="graph col-12">
+            </div>
+            <div class="snip">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="tut">
+        <p>
+            Dont Know what to do, View our tutorial -
+            <a class="tutlink" href="/about#tutorial">Tutorial <span class="far fa-arrow-alt-circle-right arrow"></span></a>
+        </p>
+    </div>
+    <footer>
+        <div class="foot col-12">       
+            <div class="col-4">
+                <h4>Website Links</h4>
+                <a href="/" class="anchor">Home</a> <br>
+                <a href="/about" class="anchor">About</a> <br>
+                <a href="/simulator" class="anchor">Simulator</a> <br>
+                <a href="/data-science" class="anchor">Data Science</a> <br>
+                <a href="/playground" class="anchor">Playground</a>
+            </div>
+            <div class="col-4">
+                <h4>References</h4>
+                <p>Background image by - <a href="https://unsplash.com/@tyvdh?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Tyler van der Hoeven</a> on <a href="https://unsplash.com/s/photos/planet?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a></p>
+                <p>Exoplanetary Data taken from - <a href="https://exoplanetarchive.ipac.caltech.edu/index.html" target="_blank">Nasa Exoplanet Archive</a></p>
+                <p>Graphs Made using - <a href="https://docs.bokeh.org/en/latest/index.html" target="_blank">Bokeh</a></p>
+            </div>
+            <div class="col-4">
+                <img src="/static/Images/logo.png" alt="Exosimulator Logo" class="logoimg" align="center">
+                <h3>ExoSimulator</h3>
+            </div>
+        </div>    
+    </footer>
+    <script src="../static/JavaScript/dataA.js" defer></script>
+    <script src="https://kit.fontawesome.com/f50845a38a.js" crossorigin="anonymous" defer></script>
+    <script src={{CDN_js}} defer></script>
+</body>
+</html>

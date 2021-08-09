@@ -1,0 +1,74 @@
+#rendersim {
+    margin: 2% 10%;
+    width: 80%;
+    touch-action: none;
+}
+
+body {
+    background-image: url("../Images/bg-home.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    color: white;
+}
+
+#go {
+    margin: 5%;
+    padding: 1%;
+}
+
+.tutlink {
+    color: white;
+    text-decoration: none;
+    transition: 1s;
+}
+
+.arrow {
+    transition: 1s;
+    color: white;
+}
+
+.tutlink:hover {
+    color: yellow;
+}
+
+.tutlink:hover .arrow {
+    margin-left: 10px;
+    color: yellow;
+}
+
+#error {
+    padding: 20px;
+}
+
+@media only screen and (min-width: 500px) {
+    #rendersim {
+        margin: 2% 5%;
+        width: 90%;
+    }
+    .UI {
+        padding: 50px;
+        font-size: medium;
+    }
+    #go {
+        margin-left: 40%;
+        padding: 1%;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    #rendersim {
+        margin: 2% 2.5%;
+        width: 95%;
+    }
+    .UI {
+        padding: 50px;
+        font-size: large;
+    }
+    #go {
+        margin-left: 45%;
+        padding: 1%;
+    }
+}
